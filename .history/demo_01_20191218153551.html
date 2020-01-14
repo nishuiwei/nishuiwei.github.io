@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="卫慧杰" content="w920098695@sina.cn" />
+  <meta name="keywords" content="your tags" />
+  <meta name="description" content="your description" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="COPYRIGHT" content="卫慧杰">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <canvas id="cavsElem">
+    你的浏览器不支持canvas，请升级浏览器
+  </canvas>
+  <script>
+    function $(id) {
+      return document.getElementById(id)
+    }
+    var canvas = $("cavsElem");
+    var ctx = canvas.getContext('2d');
+    canvas.width = 900;
+    canvas.height = 600;
+    canvas.style.border = '1px soild #000';
+
+    // 绘制三角形
+    ctx.beginPath(); // 开始路径
+    ctx.moveTo(100, 100); // 三角形， 左顶点
+    ctx.lineTo(300, 100); // 右顶点
+    ctx.lineTo(300, 300); // 底部的点
+    ctx.closePath(); // 结束路径
+    ctx.stroke(); // 描边路径
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="卫慧杰" content="w920098695@sina.cn" />
+  <meta name="keywords" content="your tags" />
+  <meta name="description" content="your description" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="COPYRIGHT" content="卫慧杰">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-family: "黑体";
+      /* background: #000; */
+    }
+
+    h1 {
+      font-size: 200px;
+      text-transform: uppercase;
+      /*定义文本中的大小写，uppercase仅有大写字母 */
+      font-weight: 900;
+      /*定义文本的粗细，从100~900*/
+      letter-spacing: 1px;
+      /*设置字母间距*/
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /*position & transform: translate(-50%, -50%) 
+    实现块元素百分比下居中*/
+      margin: 0;
+      background: url(./bg.jpg) 50% 50%;
+      /*背景图片路径和size大小*/
+      background-size: cover;
+      /*此时会保持图像的纵横比*/
+      /*并将图像缩放成将完全覆盖背景定位区域的最小大小。*/
+      -webkit-text-fill-color: transparent;
+      /*text-fill-color是设置指定文字的填充颜色，transparent透明*/
+      -webkit-background-clip: text;
+      /*背景绘制在text区域内，剪切成文字形状*/
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+      <h1>hello world</h1>
+  </div>
+</body>
+
+</html>

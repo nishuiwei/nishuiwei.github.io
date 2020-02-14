@@ -26,7 +26,7 @@ videoObj.addEventListener(
 		$('#container').removeClass('play_container');
 		videoObj.style.width = '200px';
 		videoObj.style.height = '300px';
-    exitFullscreen(videoObj);
+    // exitFullscreen(videoObj);
     // this.videoObj.exitFullscreen();
 	},
 	true

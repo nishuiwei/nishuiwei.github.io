@@ -6,9 +6,10 @@ videoObj.addEventListener('play', function() {
 		$('#container').addClass('play_container');
 		videoObj.style.width = '100%';
 		videoObj.style.height = '100%';
-		toFullVideo(videoObj);
 	}, 1000);
 });
+
+
 
 // videoObj.onended = function() {
 //   console.log(123);
@@ -25,7 +26,8 @@ videoObj.addEventListener(
 		$('#container').removeClass('play_container');
 		videoObj.style.width = '200px';
 		videoObj.style.height = '300px';
-		exitFullscreen(videoObj);
+    exitFullscreen(videoObj);
+    // this.videoObj.exitFullscreen();
 	},
 	true
 );

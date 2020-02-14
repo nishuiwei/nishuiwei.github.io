@@ -2,14 +2,14 @@ var videoObj = document.getElementById('videoALL'); // video
 var videoContainer = document.getElementById('container');
 videoObj.ontimeupdate = function() {
 	setTimeout(function() {
-		videoContainer.classList.add('play_container');
+		// videoContainer.classList.add('play_container');
 		toFullVideo(videoObj);
 	}, 1000);
 };
 
 videoObj.onended = function() {
 	console.log(123);
-	videoContainer.classList.remove('play_container');
+	// videoContainer.classList.remove('play_container');
 	exitFullscreen(videoObj);
 };
 

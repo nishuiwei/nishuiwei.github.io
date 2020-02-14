@@ -9,11 +9,8 @@ videoObj.ontimeupdate = function() {
 
 videoObj.onended = function() {
 	console.log(123);
-	// alert(123);
-	setTimeout(() => {
-    // videoContainer.classList.remove('play_container');
-    videoContainer.classList.remove("play_container");
-	}, 1000);
+	videoContainer.classList.remove('play_container');
+	exitFullscreen(videoObj);
 };
 
 function toFullVideo(doc) {
@@ -23,5 +20,15 @@ function toFullVideo(doc) {
 		return doc.mozRequestFullScreen();
 	} else {
 		return doc.msRequestFullscreen();
+	}
+}
+
+function exitFullscreen(doc) {
+	if (doc.exitFullscreen) {
+		doc.exitFullscreen();
+	} else if (doc.mozCancelFullScreen) {
+		doc.mozCancelFullScreen();
+	} else if (doc.webkitCancelFullScreen) {
+		doc.webkitCancelFullScreen();
 	}
 }

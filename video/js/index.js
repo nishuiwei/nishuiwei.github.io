@@ -1,17 +1,23 @@
 var videoObj = document.getElementById('videoALL'); // video
+var videoContainer = document.getElementById('container');
 videoObj.ontimeupdate = function() {
 	setTimeout(function() {
+		videoContainer.classList.add('play_container');
 		toFullVideo(videoObj);
 	}, 1000);
 };
-window.onresize = function() {
-	this.videoObj.style.width = window.innerWidth + 'px';
-	this.videoObj.style.height = window.innerHeight + 'px';
+
+videoObj.onended = function() {
+	console.log(123);
+	// alert(123);
+	setTimeout(() => {
+    // videoContainer.classList.remove('play_container');
+    videoContainer.classList.remove("play_container");
+	}, 1000);
 };
+
 function toFullVideo(doc) {
-	if (doc.requestFullscreen) {
-		return doc.requestFullscreen();
-	} else if (doc.webkitRequestFullScreen) {
+	if (doc.webkitRequestFullScreen) {
 		return doc.webkitRequestFullScreen();
 	} else if (doc.mozRequestFullScreen) {
 		return doc.mozRequestFullScreen();

@@ -6,111 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="format-detection" content="telephone=no">
-  <title>微信下视频全屏播放问题</title>
-  <style>
-    #videobox {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: green;
-      background-size: 100% 100%;
-      background-position: top;
-      overflow: hidden;
-    }
-
-    #videoALL {
-      height: auto;
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      object-fit: fill;
-      display: block;
-      background-size: cover;
-      overflow: hidden;
-    }
-
-    #btn,
-    #againbtn {
-      width: 81px;
-      height: 75px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -37.5px;
-      margin-left: -40.5px;
-      background-size: 100% 100%;
-    }
-
-    #videoend {
-      position: absolute;
-      background-color: pink;
-      display: none;
-      background-size: cover;
-      background-position: top;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-  <div id="videobox">
-    <video id="videoALL" src="./source/video.mp4" preload="auto" webkit-playsinline="true"
-      playsinline="true" x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true"
-      x5-video-orientation="portraint" style="object-fit:fill">
-    </video>
-
-    <div id="btn" onclick="playcontr()"></div>
-  </div>
-
-  <div id="videoend">
-    <div id="againbtn" onclick="playcontr()"></div>
-  </div>
-
-  <script>
-    var videoALL = document.getElementById('videoALL'),
-      videobox = document.getElementById('videobox'),
-      btn = document.getElementById('btn'),
-      videoend = document.getElementById('videoend');
-    var clientWidth = document.documentElement.clientWidth;
-    var clientHeight = document.documentElement.clientHeight;
-    videoALL.style.width = clientWidth + 'px';
-    videoALL.style.height = 'auto';
-    document.addEventListener('touchmove', function (e) { e.preventDefault() }, false);
-
-    function stylediv(divId) {
-      divId.style.width = clientWidth + 'px';
-      divId.style.height = clientHeight + 'px';
-    }
-    stylediv(videobox);
-    stylediv(videoend);
-
-    var u = navigator.userAgent;
-    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端 
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端 
-
-    function playcontr() {
-      if (isAndroid) {
-        videoALL.style.width = window.screen.width + 'px';
-        videoALL.style.height = window.screen.height + 'px';
-      }
-      videobox.style.display = "block";
-      videoALL.play();
-      btn.style.display = "none";
-      videoend.style.display = "none";
-    };
-
-    videoALL.addEventListener('pause', function () {
-      videoALL.style.width = clientWidth + 'px';
-      btn.style.display = "block";
-    })
-
-    videoALL.addEventListener("ended", function () {
-      videoALL.pause();
-      videobox.style.display = "none";
-      videoend.style.display = "block";
-    });
-
-  </script>
+  <video id="videoALL" src="./source/video.mp4" controls reload="auto" webkit-playsinline="true" playsinline="true"
+    x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true"
+    x5-video-orientation="portraint" style="object-fit:fill">
+  </video>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
